@@ -34,7 +34,7 @@ const markup = images
   )
   .join("");
 
-gallery.insertAdjacentHTML("beforeend", markup);
+gallery.innerHTML = markup;
 
 gallery.style.listStyleType = "none";
 gallery.style.marginTop = "0";
@@ -49,9 +49,7 @@ gallery.style.width = "1328px";
 
 const galleryItems = gallery.querySelectorAll(".gallery-item");
 galleryItems.forEach((item) => {
-  item.style.flex = "calc ((100% - 48px) / 3)";
-  item.style.boxSizing = "border-box";
-  item.style.overflow = "hidden";
+  item.style.width = "calc ((100% - 48px) / 3)";
 });
 
 const galleryItemImg = gallery.querySelectorAll(".gallery-item-img");
